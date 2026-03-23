@@ -81,6 +81,9 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false)
   const frameRef = useRef(0)
 
+  // Use a higher DPR on mobile devices (not stuck at 1) to improve rendered image sharpness
+  const canvasDpr = isMobile ? [1, 2] : [1, 2]
+
   useEffect(() => {
     const updateLayout = () => {
       frameRef.current = 0
@@ -114,8 +117,6 @@ export default function Home() {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-
-  const canvasDpr = isMobile ? 1 : [1, 2]
 
   return (
     <section className="home-scene">
