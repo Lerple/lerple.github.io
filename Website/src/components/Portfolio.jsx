@@ -124,35 +124,42 @@ const Portfolio = () => {
               style={{ animationDelay: `${index * 120}ms` }}
               ref={index === 2 ? thirdProjectRef : null}
             >
-              <div className="portfolio-card-top">
-                <span className="portfolio-card-number">{project.number}</span>
-                <span className="portfolio-card-category">{project.category}</span>
+              <div className="portfolio-card-heading-column">
+                <div className="portfolio-card-top">
+                  <span className="portfolio-card-number">{project.number}</span>
+                  <span className="portfolio-card-category">{project.category}</span>
+                </div>
+
+                <div className="portfolio-card-heading">
+                  <h3 className="portfolio-card-title">{project.title}</h3>
+                </div>
               </div>
 
-              <h3 className="portfolio-card-title">{project.title}</h3>
-              <p className="portfolio-card-description">{project.description}</p>
-              {renderProjectBullets(project.bulletPoints)}
+              <div className="portfolio-card-details">
+                <p className="portfolio-card-description">{project.description}</p>
+                {renderProjectBullets(project.bulletPoints)}
 
-              {project.media.length > 0 ? (
-                <div className="portfolio-card-media">
-                  {project.media.map((item, mediaIndex) => (
-                    <div
-                      key={`portfolio-media-${project.number}-${mediaIndex}-${item.label || item.type || 'empty'}`}
-                      className="portfolio-media-slot"
-                    >
-                      <span className="portfolio-media-type">{item.type}</span>
-                      <span className="portfolio-media-label">{item.label}</span>
-                    </div>
+                {project.media.length > 0 ? (
+                  <div className="portfolio-card-media">
+                    {project.media.map((item, mediaIndex) => (
+                      <div
+                        key={`portfolio-media-${project.number}-${mediaIndex}-${item.label || item.type || 'empty'}`}
+                        className="portfolio-media-slot"
+                      >
+                        <span className="portfolio-media-type">{item.type}</span>
+                        <span className="portfolio-media-label">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+
+                <div className="portfolio-stack-row">
+                  {project.stack.map((item, stackIndex) => (
+                    <span key={`portfolio-tag-${project.number}-${stackIndex}-${item || 'empty'}`} className="portfolio-tag">
+                      {item}
+                    </span>
                   ))}
                 </div>
-              ) : null}
-
-              <div className="portfolio-tags">
-                {project.stack.map((item, stackIndex) => (
-                  <span key={`portfolio-tag-${project.number}-${stackIndex}-${item || 'empty'}`} className="portfolio-tag">
-                    {item}
-                  </span>
-                ))}
               </div>
             </article>
           ))}
@@ -166,35 +173,42 @@ const Portfolio = () => {
                   style={{ animationDelay: `${(index + 3) * 120}ms` }}
                   ref={index === 0 ? fourthProjectRef : null}
                 >
-                  <div className="portfolio-card-top">
-                    <span className="portfolio-card-number">{project.number}</span>
-                    <span className="portfolio-card-category">{project.category}</span>
+                  <div className="portfolio-card-heading-column">
+                    <div className="portfolio-card-top">
+                      <span className="portfolio-card-number">{project.number}</span>
+                      <span className="portfolio-card-category">{project.category}</span>
+                    </div>
+
+                    <div className="portfolio-card-heading">
+                      <h3 className="portfolio-card-title">{project.title}</h3>
+                    </div>
                   </div>
 
-                  <h3 className="portfolio-card-title">{project.title}</h3>
-                  <p className="portfolio-card-description">{project.description}</p>
-                  {renderProjectBullets(project.bulletPoints)}
+                  <div className="portfolio-card-details">
+                    <p className="portfolio-card-description">{project.description}</p>
+                    {renderProjectBullets(project.bulletPoints)}
 
-                  {project.media.length > 0 ? (
-                    <div className="portfolio-card-media">
-                      {project.media.map((item, mediaIndex) => (
-                        <div
-                          key={`portfolio-media-${project.number}-${mediaIndex}-${item.label || item.type || 'empty'}`}
-                          className="portfolio-media-slot"
-                        >
-                          <span className="portfolio-media-type">{item.type}</span>
-                          <span className="portfolio-media-label">{item.label}</span>
-                        </div>
+                    {project.media.length > 0 ? (
+                      <div className="portfolio-card-media">
+                        {project.media.map((item, mediaIndex) => (
+                          <div
+                            key={`portfolio-media-${project.number}-${mediaIndex}-${item.label || item.type || 'empty'}`}
+                            className="portfolio-media-slot"
+                          >
+                            <span className="portfolio-media-type">{item.type}</span>
+                            <span className="portfolio-media-label">{item.label}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
+
+                    <div className="portfolio-stack-row">
+                      {project.stack.map((item, stackIndex) => (
+                        <span key={`portfolio-tag-${project.number}-${stackIndex}-${item || 'empty'}`} className="portfolio-tag">
+                          {item}
+                        </span>
                       ))}
                     </div>
-                  ) : null}
-
-                  <div className="portfolio-tags">
-                    {project.stack.map((item, stackIndex) => (
-                      <span key={`portfolio-tag-${project.number}-${stackIndex}-${item || 'empty'}`} className="portfolio-tag">
-                        {item}
-                      </span>
-                    ))}
                   </div>
                 </article>
               ))}
