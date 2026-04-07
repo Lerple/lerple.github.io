@@ -32,7 +32,7 @@ export const siteContent = {
         title: 'Resume Intent Classification System',
         category: 'Software',
         description:
-          'K.A.I.R.O. V1.0 is a lightweight resume assistant that classifies natural language questions and routes them to structured answers about experience, projects, and technical skills.',
+          'K.A.I.R.O. V1.0 is a lightweight neural network resume assistant that classifies natural language questions and routes them to structured answers about experience, projects, and technical skills.',
         bulletPoints: [
           'Implemented the system in Python with PyTorch, NLTK, and JSON-based training data for local deployment.',
           'Trained a feedforward neural network classifier on bag-of-words features for intent-based question answering.',
